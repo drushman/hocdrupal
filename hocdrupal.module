@@ -1,0 +1,25 @@
+<?php
+ 
+/**
+ * Implement hook_menu()
+ */
+function hocdrupal_menu() {
+  $items = array();
+  $items['hello'] = array(
+    'title'  => 'Hello',
+    'access arguments' => array('access content'),
+    'page callback' => 'hocdrupal_page_callback',
+    'type' => MENU_NORMAL_ITEM,
+  );
+  
+  return $items;
+  
+}
+
+/**
+ * Callback function for /hello.
+ */
+function hocdrupal_page_callback() {
+  return 'Hello Drupal';
+}
+
